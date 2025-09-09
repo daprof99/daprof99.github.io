@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adeniyi Odukoya — Personal Page</title>
+  <meta name="description" content="Adeniyi Odukoya — Robotics student building smart systems like vending machines and mobile robots. Passionate about automation and real-world innovation." />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div><strong>Adeniyi</strong></div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="{{ url_for('home') }}">About Me</a>
+      <a href="{{ url_for('inventory') }}">Inventory</a>
+      <div class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</div>
+    </div>
+  </div>
+
+  <div class="container">
+   <header>
+  <div class="profile-box">
+    <!-- Profile image -->
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}"
+         alt="Adeniyi Odukoya"
+         class="avatar">
+
+    <!-- Social icons row -->
+    <div class="social-icons">
+      <a href="https://github.com/daprof99" target="_blank" aria-label="GitHub">
+        <img src="{{ url_for('static', filename='icons/github.svg') }}" alt="GitHub">
+      </a>
+      <a href="https://linkedin.com/in/daprof99" target="_blank" aria-label="LinkedIn">
+        <img src="{{ url_for('static', filename='icons/linkedin.svg') }}" alt="LinkedIn">
+      </a>
+      <a href="https://x.com/daprof99" target="_blank" aria-label="X (Twitter)">
+        <img src="{{ url_for('static', filename='icons/x.svg') }}" alt="X">
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <h1>Adeniyi Odukoya</h1>
+    <p class="lead">
+      "I’m Adeniyi, a robotics enthusiast who builds smart systems like vending machines,
+      and I enjoy turning complex problems into simple, creative solutions."
+    </p>
+  </div>
+</header>
+
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h2>About me</h2>
+          <p class="muted">I am a robotics trainee with a solid foundation in hardware and software integration, currently developing projects such as an automated vending machine and mobile robotic systems. My interests lie in automation, intelligent control, and practical applications of emerging technologies. I am driven by a passion for creating innovative solutions that bridge theory with real-world impact.</p>
+        </section>
+
+        <section class="card">
+          <h2>Projects</h2>
+          <div class="projects">
+            <article class="project">
+              <h4>Vending Machine (Student Project)</h4>
+              <p class="muted">An ESP32-based vending machine with payment integration and remote monitoring.</p>
+            </article>
+            <article class="project">
+              <h4>Result Management App</h4>
+              <p class="muted">A simple students' result management system with CRUD, reports, and role-based access.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Skills</h2>
+          <div class="skills">
+            <span class="skill">Embedded C / C++</span>
+            <span class="skill">ESP32</span>
+            <span class="skill">Python</span>
+            <span class="skill">Web (HTML/CSS/JS)</span>
+            <span class="skill">Design (Fusion/SolidWorks)</span>
+            <span class="skill">Schematics (Proteus)</span>
+            <span class="skill">Arduino</span>
+            <span class="skill">Git</span>
+          </div>
+        </section>
+
+     <section class="card resources-card">
+  <h2>🛠 Resources for Techies</h2>
+  <p class="muted">Curated links for robotics, coding, and hardware projects:</p>
+  <ul class="resources-list">
+    <li><a href="https://www.arduino.cc/" target="_blank">Arduino Official</a> – Tutorials, boards, and libraries.</li>
+    <li><a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/" target="_blank">ESP32 Docs</a> – Complete ESP32 documentation and guides.</li>
+    <li><a href="https://hackaday.com/" target="_blank">Hackaday</a> – Maker projects, tutorials, and hardware hacks.</li>
+    <li><a href="https://learn.adafruit.com/" target="_blank">Adafruit Learning System</a> – Step-by-step guides for electronics and sensors.</li>
+    <li><a href="https://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a> – Coding tutorials and algorithm references.</li>
+    <li><a href="https://wiki.ros.org/" target="_blank">ROS Wiki</a> – Robot Operating System tutorials and docs.</li>
+    <li><a href="https://stackoverflow.com/" target="_blank">Stack Overflow</a> – Ask questions, find solutions, and learn coding.</li>
+    <li><a href="https://github.com/" target="_blank">GitHub</a> – Explore projects, share code, and collaborate.</li>
+  </ul>
+</section>
+
+
+
+      <aside>
+        <div class="card">
+         <!-- Contact Section -->
+<div class="card">
+  <h3>Contact</h3>
+  <div class="contact">
+    <div class="muted">Email</div>
+    <a class="btn" href="mailto:daprof99@gmail.com">daprof99@gmail.com</a>
+
+    </div>
+</div>
+
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <h3>Quick bio</h3>
+          <p class="muted">Innovator at heart — I transform complex problems into practical, working solutions.</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Built with Flask, HTML, CSS, and ❤️
+    </footer>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const root = document.documentElement;
+    const navbar = document.querySelector(".navbar");
+
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      root.setAttribute("data-theme", "light");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const newTheme = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", newTheme);
+      toggleBtn.textContent = newTheme === "dark" ? "🌙" : "☀️";
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("shrink");
+      } else {
+        navbar.classList.remove("shrink");
+      }
+    });
+  </script>
+</body>
+</html>
