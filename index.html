@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Personal Page</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#7c3aed;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:linear-gradient(180deg,#071025 0%, #0f1724 100%); color:#e6eef6; -webkit-font-smoothing:antialiased}
+    .container{max-width:960px;margin:36px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,#1f2937,#111827);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)}
+    h1{margin:0;font-size:28px}
+    p.lead{color:var(--muted);margin-top:8px}
+
+    .card{background:var(--card);padding:18px;border-radius:12px;margin-top:18px;box-shadow:0 6px 18px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
+    @media (max-width:800px){.grid{grid-template-columns:1fr}}
+
+    .skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .skill{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted)}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:12px}
+    @media (max-width:600px){.projects{grid-template-columns:1fr}}
+    .project{padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);}
+    .project h4{margin:0 0 6px 0}
+
+    .contact{display:flex;flex-direction:column;gap:8px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white;text-decoration:none}
+
+    footer{color:var(--muted);text-align:center;margin-top:28px;font-size:13px}
+
+    /* small utilities */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">YOU</div>
+      <div>
+        <h1>Your Name</h1>
+        <p class="lead">A short one-line description: who you are, what you do, and one sentence that shows personality.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section class="card">
+          <h2>About me</h2>
+          <p class="muted">Write a short paragraph here about yourself — your background, interests, and what you’re working on right now. Keep it friendly and concise. Example: “I’m a robotics student who loves building practical projects, experimenting with embedded systems (ESP32), and making tools that help people learn.”</p>
+        </section>
+
+        <section class="card">
+          <h2>Projects</h2>
+          <div class="projects">
+            <article class="project">
+              <h4>Vending Machine (Student Project)</h4>
+              <p class="muted">A quick description: an ESP32-based vending machine with payment integration and remote monitoring.</p>
+            </article>
+            <article class="project">
+              <h4>Result Management App</h4>
+              <p class="muted">A simple students' result management system inspired by HisGrace Gestio RPS — CRUD, reports, and role-based access.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Skills</h2>
+          <div class="skills">
+            <span class="skill">Embedded C / C++</span>
+            <span class="skill">ESP32</span>
+            <span class="skill">Python</span>
+            <span class="skill">Web (HTML/CSS/JS)</span>
+            <span class="skill">Arduino</span>
+            <span class="skill">Git</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Blog / Notes</h2>
+          <p class="muted">Share short posts, ideas, or links here. You can also replace this with an embedded list of recent notes or a link to your GitHub.</p>
+        </section>
+      </main>
+
+      <aside>
+        <div class="card">
+          <h3>Contact</h3>
+          <div class="contact">
+            <div class="muted">Email</div>
+            <a class="btn" href="mailto:you@example.com">you@example.com</a>
+
+            <div style="margin-top:10px" class="muted">Links</div>
+            <div style="display:flex;flex-direction:column;gap:8px;margin-top:6px">
+              <a href="#" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-align:center;text-decoration:none">GitHub</a>
+              <a href="#" class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-align:center;text-decoration:none">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px;text-align:center">
+          <h3>Quick bio</h3>
+          <p class="muted">A one-liner you can use anywhere: "Curious builder — I turn ideas into working prototypes."</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      Built with ♥ • Replace this page with your own content — edit the HTML and customize.
+    </footer>
+  </div>
+</body>
+</html>
