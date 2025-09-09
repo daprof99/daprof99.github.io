@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vending Machine Inventory</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div><strong>Adeniyi</strong></div>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="{{ url_for('home') }}">About Me</a>
+      <a href="{{ url_for('inventory') }}">Inventory</a>
+      <div class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>Vending Machine Inventory</h1>
+      <p class="muted">Static list of items currently available</p>
+    </header>
+
+    <section class="card">
+      <h2>Items</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Stock</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+         <tr>
+            <td>FanMilk SuperYogo</td>
+            <td>4</td>
+            <td>₦200</td>
+          </tr>
+          <tr>
+            <td>FanMilk FanIce</td>
+            <td>7</td>
+            <td>₦350</td>
+          </tr> <tr>
+            <td>CocaCola</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>Table Water</td>
+            <td>0</td>
+            <td>₦200</td>
+          </tr>
+          <tr>
+            <td>Fanta</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>Pepsi</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>Lacasera</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>7Up</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>Teem</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>Sprite</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>Fayrouz</td>
+            <td>0</td>
+            <td>₦600</td>
+          </tr>
+          <tr>
+            <td>Maltina</td>
+            <td>0</td>
+            <td>₦600</td>
+          </tr>
+          <tr>
+            <td>Dudu Yoghurt</td>
+            <td>0</td>
+            <td>₦800</td>
+          </tr>
+          <tr>
+            <td>Schweppes</td>
+            <td>0</td>
+            <td>₦800</td>
+          </tr>
+          <tr>
+            <td>5 Alive</td>
+            <td>0</td>
+            <td>₦1500</td>
+          </tr>
+          <tr>
+            <td>Chi Exotic</td>
+            <td>0</td>
+            <td>₦1800</td>
+          </tr>
+          <tr>
+            <td>Frutta</td>
+            <td>0</td>
+            <td>₦350</td>
+          </tr>
+          <tr>
+            <td>Yale Shortbread</td>
+            <td>0</td>
+            <td>₦450</td>
+          </tr>
+          <tr>
+            <td>Nice</td>
+            <td>0</td>
+            <td>₦350</td>
+          </tr>
+          <tr>
+            <td>Fab Cookies</td>
+            <td>0</td>
+            <td>₦500</td>
+          </tr>
+          <tr>
+            <td>Gold</td>
+            <td>0</td>
+            <td>₦400</td>
+          </tr>
+          <tr>
+            <td>Hello</td>
+            <td>0</td>
+            <td>₦350</td>
+          </tr>
+          <tr>
+            <td>FanMilk FanDango Citrus</td>
+            <td>0</td>
+            <td>₦100</td>
+          </tr>
+          <tr>
+            <td>FanMilk Frozen Apple</td>
+            <td>0</td>
+            <td>₦50</td>
+          </tr>
+          <tr>
+            <td>FanMilk FanChoco</td>
+            <td>0</td>
+            <td>₦200</td>
+          </tr>
+          <tr>
+
+
+        </tbody>
+      </table>
+    </section>
+
+    <footer style="margin-top:2rem;text-align:center">
+      <a href="{{ url_for('home') }}" class="button">← Back to About Me</a>
+    </footer>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById("themeToggle");
+    const root = document.documentElement;
+    const navbar = document.querySelector(".navbar");
+
+    if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+      root.setAttribute("data-theme", "light");
+      toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      const current = root.getAttribute("data-theme");
+      const newTheme = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", newTheme);
+      toggleBtn.textContent = newTheme === "dark" ? "🌙" : "☀️";
+    });
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("shrink");
+      } else {
+        navbar.classList.remove("shrink");
+      }
+    });
+  </script>
+</body>
+</html>
